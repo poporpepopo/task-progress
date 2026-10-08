@@ -1,0 +1,6 @@
+{
+  "name": "task-progress",
+  "version": "0.1.0",
+  "description": "Shows running subagents and background shells under the prompt with a progress bar and an ETA learned from past runs",
+  "types": "./types/index.d.ts"
+}
