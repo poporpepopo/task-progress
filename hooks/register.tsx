@@ -157,6 +157,13 @@ export const register: Register = on => {
     return ran
   }).catch(passThrough)
 
+  on('tool.call', { tool: 'PowerShell' }, async ($, e, next) => {
+    const startedAt = await $.clock.now()
+    const ran = await next(e)
+    await trackShell($, e, ran, startedAt).catch(() => {})
+    return ran
+  }).catch(passThrough)
+
   on('tool.call', { tool: 'TaskStop' }, async ($, e, next) => {
     const ran = await next(e)
     if (ran.deny === undefined && !ran.isError) {
