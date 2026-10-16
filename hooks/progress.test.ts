@@ -81,6 +81,7 @@ test('each background task is its own row under the hint line', async ($, on) =>
 
 test('a subagent call reads as tool and target', () => {
   expect(describeCall('Read', { file_path: 'C:\\a\\b\\eta.ts' })).toBe('Read: eta.ts')
+  expect(describeCall('Read', { file_path: '/Users/me/dev/task-progress/hooks/eta.ts' })).toBe('Read: eta.ts')
   expect(describeCall('Grep', { pattern: 'TODO' })).toBe('Grep: TODO')
   expect(describeCall('TodoWrite', {})).toBe('TodoWrite')
 })

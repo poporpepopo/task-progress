@@ -16,8 +16,10 @@ A Claude Code mod that shows running subagents and background shells as rows und
 Add this to `~/.claude/settings.json`:
 
 ```json
-"env": { "CLAUDE_CODE_PLUGIN_DIRS": "C:\\path\\to\\task-progress" }
+"env": { "CLAUDE_CODE_PLUGIN_DIRS": "~/Developer/task-progress" }
 ```
+
+Several folders are separated by `:` on macOS (`;` on Windows).
 
 Or start a single session with `claude --plugin-dir <path>`.
 
