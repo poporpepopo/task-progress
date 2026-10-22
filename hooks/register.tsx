@@ -114,11 +114,6 @@ export const register: Register = on => {
   on('session.start', async ($, e, next) => {
     const result = await next(e)
     $.ui.status(undefined) // clears the line earlier versions pinned
-    // One-time wipe of the runs learned while the mod was being demoed.
-    if ((await $.store.get('demoReset')) !== true) {
-      await $.store.delete('history')
-      await $.store.set('demoReset', true)
-    }
     await loadHistory($)
     $.clock.every(1000, () => {
       tick($).catch(() => {})
