@@ -39,3 +39,7 @@ Windows:
 claude plugin validate .
 claude plugin test .
 ```
+
+## ライセンス
+
+MIT
